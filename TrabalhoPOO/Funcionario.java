@@ -23,6 +23,8 @@ public class Funcionario extends Pessoa{
     protected void setSalario(double salario) {
         this.salario = salario;
     }
+    
+    @Override
     public void exibirDados() {
         System.out.println("Nome: " + getNome());
         System.out.println("CPF: " + getCpf());

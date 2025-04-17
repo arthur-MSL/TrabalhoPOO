@@ -1,9 +1,12 @@
 
 
 public abstract class Pessoa {
-    private String nome;
-    private String cpf;
-    private Endereco endereco;
+    protected String nome;
+    protected String cpf;
+    protected Endereco endereco;
+    protected String estadoCivil;
+    protected String escolaridade;
+    protected Data dataNascimento;
 
     public Pessoa(String nome, String cpf, Endereco endereco) {
         this.nome = nome;
@@ -33,6 +36,30 @@ public abstract class Pessoa {
 
     protected void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+
+    public String getEscolaridade() {
+        return escolaridade;
+    }
+
+    public void setEscolaridade(String escolaridade) {
+        this.escolaridade = escolaridade;
+    }
+
+    public Data getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Data dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
 
@@ -72,5 +99,6 @@ public abstract class Pessoa {
     }
 
     public abstract void exibirDados(); // metodo abstrato para exibir dados da pessoa(cada classe implementa de um jeito diferente)
+
 
 }
