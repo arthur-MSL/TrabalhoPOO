@@ -1,5 +1,3 @@
-
-
 public abstract class Pessoa {
     protected String nome;
     protected String cpf;
@@ -7,6 +5,16 @@ public abstract class Pessoa {
     protected String estadoCivil;
     protected String escolaridade;
     protected Data dataNascimento;
+
+    public Pessoa(String nome, String cpf, Endereco endereco, String estadoCivil, String escolaridade,
+            Data dataNascimento) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.estadoCivil = estadoCivil;
+        this.escolaridade = escolaridade;
+        this.dataNascimento = dataNascimento;
+    }
 
     public Pessoa(String nome, String cpf, Endereco endereco) {
         this.nome = nome;

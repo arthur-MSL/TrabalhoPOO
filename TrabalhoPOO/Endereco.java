@@ -1,5 +1,3 @@
-
-
 public class Endereco {
 
     private String estado;

@@ -1,12 +1,14 @@
 public class Agencia {
 
     private int numero;
+    private String nome;
     private Endereco endereco;
     private Gerente gerente;
     private Funcionario[] funcionarios;
 
-    public Agencia(int numero, Endereco endereco, Gerente gerente, Funcionario[] funcionarios) {
+    public Agencia(int numero, String nome, Endereco endereco, Gerente gerente, Funcionario[] funcionarios) {
         this.numero = numero;
+        this.nome = nome;
         this.endereco = endereco;
         this.gerente = gerente;
         this.funcionarios = funcionarios;
@@ -16,6 +18,12 @@ public class Agencia {
     }
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     public Endereco getEndereco() {
         return endereco;
