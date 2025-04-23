@@ -20,6 +20,13 @@ public class Saque extends Transacoes {
             if (valor > conta.getSaldoAtual()) {
                 throw new IllegalArgumentException("Saldo insuficiente para realizar o saque.");
             }
+        }else if (conta.getTipoConta() == 3) { // Conta Salário
+            ContaSalario contaSalario = (ContaSalario) conta;
+            if (valor > contaSalario.getLimiteSaque()) {
+                throw new IllegalArgumentException("Valor do saque excede o limite da conta salário.");
+            }
+        } else {
+            throw new IllegalArgumentException("Tipo de conta desconhecido.");
         }
         if (valor <= 0) {
             throw new IllegalArgumentException("O valor do saque deve ser maior que zero.");
