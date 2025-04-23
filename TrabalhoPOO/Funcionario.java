@@ -68,11 +68,13 @@ public class Funcionario extends Pessoa{
 
     @Override
     public void exibirDados() {
-        System.out.println("Nome: " + getNome());
-        System.out.println("CPF: " + getCpf());
-        System.out.println("Endereço: " + getEndereco().getRua() + ", " + getEndereco().getCidade() + ", " + getEndereco().getEstado());
+       super.exibirDados();
+        System.out.println("Número da carteira de trabalho: " + nroCarteiraTrabalho);
+        System.out.println("RG: " + RG);
+        System.out.println("Sexo: " + sexo);
         System.out.println("Cargo: " + cargo);
-        System.out.println("Salário: R$" + salario);
+        System.out.println("Salário: " + salario);
+        System.out.println("Ano de ingresso: " + anoIngresso);
     }
 
 }

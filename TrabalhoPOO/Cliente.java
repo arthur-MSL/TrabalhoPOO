@@ -15,11 +15,10 @@ public class Cliente extends Pessoa{
         this.agenciaCadastrada = agenciaCadastrada;
     }
 
-
-    // TEM QUE MUDAR ISSO, FOI SÓ A SUGESTÃO PARA FICAR CORRETO
     @Override
     public void exibirDados() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exibirDados'");
+        super.exibirDados();
+        System.out.println("Agência cadastrada: " + agenciaCadastrada.getNome() + " - " + agenciaCadastrada.getNumero());
+        
     }
 }

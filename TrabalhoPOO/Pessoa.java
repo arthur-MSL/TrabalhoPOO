@@ -6,8 +6,7 @@ public abstract class Pessoa {
     protected String escolaridade;
     protected Data dataNascimento;
 
-    public Pessoa(String nome, String cpf, Endereco endereco, String estadoCivil, String escolaridade,
-            Data dataNascimento) {
+    public Pessoa(String nome, String cpf, Endereco endereco, String estadoCivil, String escolaridade, Data dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -106,7 +105,14 @@ public abstract class Pessoa {
                dig2 == Character.getNumericValue(cpf.charAt(10));
     }
 
-    public abstract void exibirDados(); // metodo abstrato para exibir dados da pessoa(cada classe implementa de um jeito diferente)
+    public void exibirDados(){
+        System.out.println("Nome: " + nome);
+        System.out.println("CPF: " + cpf);
+        System.out.println("Endereço: " + endereco.getRua() + ", " + endereco.getCidade() + ", " + endereco.getEstado());
+        System.out.println("Estado Civil: " + estadoCivil);
+        System.out.println("Escolaridade: " + escolaridade);
+        System.out.println("Data de Nascimento: " + dataNascimento.getDia() + "/" + dataNascimento.getMes() + "/" + dataNascimento.getAno());
+    }
 
 
 }

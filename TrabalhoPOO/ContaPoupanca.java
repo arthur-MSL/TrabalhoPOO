@@ -28,4 +28,11 @@ public class ContaPoupanca extends Conta {
         this.rendimentoMes = rendimentoMes;
     }
 
+    @Override
+
+    public int getTipoConta(){
+        return 2; // Conta Poupanca
+
+    }
+
 }

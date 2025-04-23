@@ -42,5 +42,10 @@ public class ContaCorrente extends Conta {
         this.laxaAdministrativa = laxaAdministrativa;
     }
     
+    @Override
 
+    public int getTipoConta(){
+        return 1; // Conta Corrente
+
+    }
 }

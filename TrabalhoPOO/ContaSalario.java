@@ -40,5 +40,11 @@ public class ContaSalario extends Conta {
     public void setLimiteTransferencia(double limiteTransferencia) {
         this.limiteTransferencia = limiteTransferencia;
     }
-    
+
+    @Override
+
+    public int getTipoConta(){
+        return 3; // Conta Salario
+
+    }
 }

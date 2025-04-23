@@ -103,5 +103,8 @@ public abstract class Conta {
         this.agenciaLigada = agenciaLigada;
     }
 
+    public abstract int getTipoConta();
+        
+    
 
 }

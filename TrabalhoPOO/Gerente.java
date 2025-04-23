@@ -37,5 +37,13 @@ public class Gerente extends Funcionario {
         this.possuiCursoGerencia = possuiCursoGerencia;
     }
 
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Data de início de carreira: " + dataInicioCarreira.getDia() + "/" + dataInicioCarreira.getMes()
+                + "/" + dataInicioCarreira.getAno());
+        System.out.println("Comissão: " + comissao);
+        System.out.println("Possui curso de gerência: " + (possuiCursoGerencia == 1 ? "Sim" : "Não"));
+    }
        
 }
