@@ -66,6 +66,14 @@ public class Funcionario extends Pessoa{
         this.anoIngresso = anoIngresso;
     }
 
+    public void calcularSalario(double salario, int anoIngresso) {
+        if(anoIngresso < 2015){
+            salario = (salario *1.1);
+        }
+        System.out.println("Salário atualizado: " + salario);
+       
+    }
+
     @Override
     public void exibirDados() {
        super.exibirDados();

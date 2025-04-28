@@ -4,23 +4,23 @@ public class Deposito extends Transacoes {
         super(conta, dataTransacao, canalOndeFoiFeita);
     }
     
-    public void realizarDeposito(Conta contaOrigem, Conta contaDestino, double valor, int senha) throws IllegalArgumentException {
+    public void realizarDeposito(Conta contaOrigem, Conta contaDestino, double valor, int senha) throws OpInvalidaException {
         if (contaOrigem.getSenha() != senha) {
             System.out.println("Senha incorreta. Acesso negado.");
             return;
         }
         if (contaOrigem.getAtiva() != 1 || contaDestino.getAtiva() != 1) {
-            throw new IllegalArgumentException("Uma ou ambas as contas não estão ativas.");
+            throw new OpInvalidaException("Uma ou ambas as contas não estão ativas.");
         }
         if (valor <= 0) {
-            throw new IllegalArgumentException("Valor inválido para depósito.");
+            throw new OpInvalidaException("Valor inválido para depósito.");
         }
         if(contaOrigem.getTipoConta() == 1) { // Conta Corrente
             ContaCorrente contaCorrente = (ContaCorrente) contaOrigem;
             if (contaCorrente.getLimiteChequeEspecial() < valor) {
-                    throw new IllegalArgumentException("Valor do depósito excede o limite da conta corrente.");
+                    throw new OpInvalidaException("Valor do depósito excede o limite da conta corrente.");
                 }else if(contaCorrente.getSaldoAtual() < valor) {
-                    throw new IllegalArgumentException("Saldo insuficiente para realizar o depósito.");
+                    throw new OpInvalidaException("Saldo insuficiente para realizar o depósito.");
                 }else {
                 contaOrigem.setSaldoAtual(contaOrigem.getSaldoAtual() - valor);
                 contaDestino.setSaldoAtual(contaDestino.getSaldoAtual() + valor);
@@ -32,9 +32,9 @@ public class Deposito extends Transacoes {
          else if (contaOrigem.getTipoConta() == 2) { // Conta Poupança
             ContaPoupanca contaPoupanca = (ContaPoupanca) contaOrigem;
                 if (contaPoupanca.getRendimentoMes() < valor) {
-                    throw new IllegalArgumentException("Valor do depósito excede o limite da conta poupança.");
+                    throw new OpInvalidaException("Valor do depósito excede o limite da conta poupança.");
                 } else if (contaPoupanca.getSaldoAtual() < valor) {
-                    throw new IllegalArgumentException("Saldo insuficiente para realizar o depósito.");
+                    throw new OpInvalidaException("Saldo insuficiente para realizar o depósito.");
                 }else {
                     contaOrigem.setSaldoAtual(contaOrigem.getSaldoAtual() - valor);
                     contaDestino.setSaldoAtual(contaDestino.getSaldoAtual() + valor);
@@ -46,7 +46,7 @@ public class Deposito extends Transacoes {
         else if (contaOrigem.getTipoConta() == 3) { // Conta Salário
             ContaSalario contaSalario = (ContaSalario) contaOrigem;
                 if (contaSalario.getSaldoAtual() < valor) {
-                    throw new IllegalArgumentException("Valor do depósito excede o limite da conta salário.");
+                    throw new OpInvalidaException("Valor do depósito excede o limite da conta salário.");
                 }
                 else {
                     contaOrigem.setSaldoAtual(contaOrigem.getSaldoAtual() - valor);
@@ -57,7 +57,7 @@ public class Deposito extends Transacoes {
         } 
         
         else {
-            throw new IllegalArgumentException("Tipo de conta desconhecido.");
+            throw new OpInvalidaException("Tipo de conta desconhecido.");
         }
 
       

@@ -2,6 +2,14 @@ public class Cliente extends Pessoa{
 
     private Agencia agenciaCadastrada;
 
+    public Cliente(){
+        this(null, null, null, null);
+    }
+
+    public Cliente(String nome, String cpf){
+        this(nome, cpf, null, null);
+    }
+
     public Cliente(String nome, String cpf, Endereco endereco, Agencia agenciaCadastrada) {
         super(nome, cpf, endereco);
         this.agenciaCadastrada = agenciaCadastrada;

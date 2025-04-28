@@ -1,4 +1,6 @@
-public abstract class Pessoa {
+public abstract class Pessoa {  // motivo de ser abstract: não faz sentido instanciar uma pessoa, apenas um cliente ou funcionário
+   
+
     protected String nome;
     protected String cpf;
     protected Endereco endereco;

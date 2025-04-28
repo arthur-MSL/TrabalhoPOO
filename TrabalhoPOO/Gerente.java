@@ -45,5 +45,11 @@ public class Gerente extends Funcionario {
         System.out.println("Comissão: " + comissao);
         System.out.println("Possui curso de gerência: " + (possuiCursoGerencia == 1 ? "Sim" : "Não"));
     }
+
+    public void calcularSalario(double salario, double comissao) {
+        double salarioTotal = salario + comissao;
+        System.out.println("Salário total do gerente: R$ " + salarioTotal);
+        
+    }
        
 }

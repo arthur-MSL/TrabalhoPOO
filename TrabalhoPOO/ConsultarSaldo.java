@@ -4,11 +4,12 @@ public class ConsultarSaldo extends Transacoes {
         super(conta, dataTransacao, canalOndeFoiFeita);
     }
 
-    public void realizarConsulta(Conta conta, int senha) {
+    public void realizarConsulta(Conta conta, int senha) throws OpInvalidaException {
         if (conta.getSenha() == senha) {
             System.out.println("Saldo atual: R$ " + conta.getSaldoAtual());
         if(conta.getAtiva() != 1) {
-            System.out.println("Conta inativa. Não é possível realizar a consulta.");
+            throw new OpInvalidaException("Conta inativa. Não é possível realizar a consulta.");    
+            
         
             } else if (conta.getTipoConta() == 1) { // Conta Corrente
                 ContaCorrente contaCorrente = (ContaCorrente) conta;
@@ -29,7 +30,7 @@ public class ConsultarSaldo extends Transacoes {
                 System.out.println("Saldo total disponível: R$ " + conta.getSaldoAtual());
             
             }else {
-                System.out.println("Tipo de conta desconhecido.");    
+                throw new OpInvalidaException("Tipo de conta desconhecido.");    
             }
         }
     }
