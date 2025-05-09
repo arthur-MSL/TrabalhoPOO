@@ -1,4 +1,4 @@
-public class Funcionario extends Pessoa{
+public class Funcionario extends Pessoa implements Imprimivel{
 
     private int nroCarteiraTrabalho;
     private int RG;
@@ -86,3 +86,10 @@ public class Funcionario extends Pessoa{
     }
 
 }
+
+
+    @Override
+    public void imprimirResumo() {
+        System.out.println("Funcionário: " + nome + " | Cargo: " + cargo);
+    }
+    

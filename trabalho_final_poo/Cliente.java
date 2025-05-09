@@ -1,12 +1,12 @@
-public class Cliente extends Pessoa{
+public class Cliente extends Pessoa implements Imprimivel {
 
     private Agencia agenciaCadastrada;
 
-    public Cliente(){
+    public Cliente() {
         this(null, null, null, null);
     }
 
-    public Cliente(String nome, String cpf){
+    public Cliente(String nome, String cpf) {
         this(nome, cpf, null, null);
     }
 
@@ -26,7 +26,13 @@ public class Cliente extends Pessoa{
     @Override
     public void exibirDados() {
         super.exibirDados();
-        System.out.println("Agência cadastrada: " + agenciaCadastrada.getNome() + " - " + agenciaCadastrada.getNumero());
-        
+        System.out
+                .println("Agência cadastrada: " + agenciaCadastrada.getNome() + " - " + agenciaCadastrada.getNumero());
+
     }
+}
+
+@Override
+public void imprimirResumo() {
+    System.out.println("Cliente: " + nome + " | CPF: " + cpf);
 }
