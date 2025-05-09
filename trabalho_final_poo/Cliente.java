@@ -1,5 +1,7 @@
-public class Cliente extends Pessoa implements Imprimivel {
 
+package trabalho_final_poo;
+
+public class Cliente extends Pessoa implements Imprimivel {
     private Agencia agenciaCadastrada;
 
     public Cliente() {
@@ -15,24 +17,8 @@ public class Cliente extends Pessoa implements Imprimivel {
         this.agenciaCadastrada = agenciaCadastrada;
     }
 
-    public Agencia getAgenciaCadastrada() {
-        return agenciaCadastrada;
-    }
-
-    public void setAgenciaCadastrada(Agencia agenciaCadastrada) {
-        this.agenciaCadastrada = agenciaCadastrada;
-    }
-
     @Override
-    public void exibirDados() {
-        super.exibirDados();
-        System.out
-                .println("Agência cadastrada: " + agenciaCadastrada.getNome() + " - " + agenciaCadastrada.getNumero());
-
+    public void imprimirResumo() {
+        System.out.println("Cliente: " + nome + " | CPF: " + cpf);
     }
-}
-
-@Override
-public void imprimirResumo() {
-    System.out.println("Cliente: " + nome + " | CPF: " + cpf);
 }
